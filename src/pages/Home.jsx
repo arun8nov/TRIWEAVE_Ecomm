@@ -178,9 +178,7 @@ export default function Home() {
         <div className="hero-blob hero-blob-2"></div>
         <div className="scan-line"></div>
         
-        {/* Blueprint Coordinates */}
-        <div className="tech-coord">[ 13.0827° N, 80.2707° E ] · CHENNAI PRECISION · DTF REGISTERED</div>
-        
+
         <div className="hero-grid">
           <div className="hero-content">
             <div className="hero-badge">Wear Your Story · Chennai</div>
