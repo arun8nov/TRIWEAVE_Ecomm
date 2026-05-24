@@ -178,6 +178,9 @@ export default function Home() {
         <div className="hero-blob hero-blob-2"></div>
         <div className="scan-line"></div>
         
+        {/* Blueprint Coordinates */}
+        <div className="tech-coord">[ 13.0827° N, 80.2707° E ] · CHENNAI PRECISION · DTF REGISTERED</div>
+        
         <div className="hero-grid">
           <div className="hero-content">
             <div className="hero-badge">Wear Your Story · Chennai</div>
@@ -206,32 +209,64 @@ export default function Home() {
           </div>
 
           <div className="hero-visual">
-            <div className="tshirt-stage">
-              <div className="orbit-ring"></div>
-              <div className="glow-ring"></div>
-              <div className="tshirt-aura"></div>
-              <div className="tshirt-wrapper">
-                <svg className="tshirt-3d" id="heroTshirtSvg" viewBox="0 0 240 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <ellipse cx="120" cy="252" rx="72" ry="6" fill="rgba(0,0,0,0.10)"/>
-                  <path id="heroShirtBody" d="M60 52 L20 88 L44 108 L44 240 L196 240 L196 108 L220 88 L180 52 C180 52 165 76 120 76 C75 76 60 52 60 52 Z" fill="#0097b2" stroke="#007a96" strokeWidth="1.5"/>
-                  <path d="M92 52 Q120 80 148 52" fill="none" stroke="#ccc" strokeWidth="2"/>
-                  <path d="M92 52 Q120 68 148 52" fill="rgba(0,0,0,0.04)"/>
-                  <path d="M60 52 L20 88 L44 108 L60 92 Z" fill="rgba(0,0,0,0.06)" stroke="#007a96" strokeWidth="1"/>
-                  <path d="M180 52 L220 88 L196 108 L180 92 Z" fill="rgba(0,0,0,0.06)" stroke="#007a96" strokeWidth="1"/>
-                  <line x1="52" y1="62" x2="32" y2="96" stroke="rgba(0,0,0,0.07)" strokeWidth="1"/>
-                  <line x1="188" y1="62" x2="208" y2="96" stroke="rgba(0,0,0,0.07)" strokeWidth="1"/>
-                  <rect id="heroPrintArea" x="72" y="105" width="96" height="80" rx="4" fill="rgba(255,255,255,0.05)"/>
-                  <g id="heroShirtPrint">
-                    <image href="https://res.cloudinary.com/dpaxjxw3z/image/upload/q_auto/f_auto/v1779181349/logo_resized_ntkzkz.png" x="80" y="105" width="80" height="80" preserveAspectRatio="xMidYMid meet"/>
-                  </g>
-                  <line x1="120" y1="76" x2="120" y2="240" stroke="rgba(255,255,255,0.15)" strokeWidth="1" stroke-dasharray="4 4"/>
-                  <line x1="44" y1="108" x2="196" y2="108" stroke="rgba(255,255,255,0.1)" strokeWidth="1"/>
-                  <line x1="44" y1="235" x2="196" y2="235" stroke="rgba(255,255,255,0.1)" strokeWidth="1"/>
-                </svg>
+            <div className="collage-stage">
+              {/* Grid Background Effect */}
+              <div className="collage-grid-bg"></div>
+
+              {/* Card 1: Streetwear Hoodie (Back Left-Top Layer) */}
+              <div className="collage-card card-hoodies">
+                <span className="collage-badge">Hoodies</span>
+                <div className="collage-card-inner">
+                  <img src="https://res.cloudinary.com/dpaxjxw3z/image/upload/q_auto/f_auto/v1779279050/Untitled_design_4_1_yedbef.png" alt="Custom printed fleece hoodie" />
+                </div>
               </div>
-              <div className="float-badge fb1">✦ 100% Cotton</div>
-              <div className="float-badge fb2">Wash Proof ✓</div>
-              <div className="float-badge fb3">From ₹199</div>
+
+              {/* Card 2: Raudhram Tamil Tee (Back Left-Bottom Layer) */}
+              <div className="collage-card card-tees-black">
+                <span className="collage-badge">Tamil Tee</span>
+                <div className="collage-card-inner">
+                  <img src="https://res.cloudinary.com/dpaxjxw3z/image/upload/q_auto/f_auto/v1779273834/Frame_2_1_x5oyfx.png" alt="Raudhram Classic Tamil Tee" />
+                </div>
+              </div>
+
+              {/* Card 3: Corporate Polo (Back Right-Top Layer) */}
+              <div className="collage-card card-polos">
+                <span className="collage-badge">Corporate Polo</span>
+                <div className="collage-card-inner">
+                  <img src="https://res.cloudinary.com/dpaxjxw3z/image/upload/q_auto/f_auto/v1779273689/Frame_3_1_uhohia.png" alt="Embroidered corporate polo" />
+                </div>
+              </div>
+
+              {/* Card 4: Sunset Yellow Polo (Back Right-Bottom Layer) */}
+              <div className="collage-card card-polos-yellow">
+                <span className="collage-badge">Ribbed Polo</span>
+                <div className="collage-card-inner">
+                  <img src="https://res.cloudinary.com/dpaxjxw3z/image/upload/q_auto/f_auto/v1779278522/Untitled_design_3_1_fdagwj.png" alt="Sunset Yellow Ribbed Polo" />
+                </div>
+              </div>
+
+              {/* Card 5: Custom Graphic Tee (Front Focal Layer with Laser Scan Reveal) */}
+              <div className="collage-card card-tees">
+                <span className="collage-badge accent">Custom Tees</span>
+                <div className="collage-card-inner tee-scanner-box">
+                  {/* Glowing Laser Sweep Beam */}
+                  <div className="laser-beam">
+                    <div className="laser-glow"></div>
+                  </div>
+                  
+                  {/* Underlay: Holographic wireframe/blueprint version of the shirt */}
+                  <img className="tee-img tee-holo" src="https://res.cloudinary.com/dpaxjxw3z/image/upload/q_auto/f_auto/v1779270075/Frame_1_1_mcrxjx.png" alt="Holographic Tee Blueprint" />
+                  
+                  {/* Overlay: Full color printed product, clipped by the scanner keyframes */}
+                  <div className="tee-print-overlay">
+                    <img className="tee-img tee-printed" src="https://res.cloudinary.com/dpaxjxw3z/image/upload/q_auto/f_auto/v1779270075/Frame_1_1_mcrxjx.png" alt="Finished Printed Tee" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Decorative Tech Rings */}
+              <div className="tech-ring tr1"></div>
+              <div className="tech-ring tr2"></div>
             </div>
           </div>
         </div>

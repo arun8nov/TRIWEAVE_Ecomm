@@ -198,14 +198,18 @@ export default function TShirtCustomizer({ activeProduct }) {
           </div>
 
           <div className="price-tag-row">
-            <span className="price-label">Price per unit:</span>
-            <span className="price-val">₹{currentProduct.price}</span>
+            <span className="price-label">Base price per unit:</span>
+            <span className="price-val">₹{currentProduct.price}*</span>
           </div>
 
           <button className="btn-primary add-to-cart-cta" onClick={handleAddToCart}>
             <ShoppingBag size={16} />
-            <span>Add Custom Design to Cart — ₹{currentProduct.price * quantity}</span>
+            <span>Add Custom Design to Cart — Est. ₹{currentProduct.price * quantity}*</span>
           </button>
+          
+          <p className="price-disclaimer">
+            *Estimated base pricing. Final quote depends on print size, colors, order quantity, and fabric. We will review your mockups and confirm the final price on WhatsApp.
+          </p>
         </div>
       </div>
     </div>

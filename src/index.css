@@ -154,10 +154,10 @@ body::before {
 
 /* ── HERO SECTION ── */
 #hero {
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
   align-items: center;
-  padding: 120px 5vw 60px;
+  padding: 95px 5vw 40px;
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid var(--border);
@@ -175,20 +175,49 @@ body::before {
 .hero-blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
+  filter: blur(100px);
   pointer-events: none;
 }
 .hero-blob-1 {
-  width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(0,151,178,0.10) 0%, transparent 70%);
-  top: -100px; right: -100px;
-  animation: blobFloat 8s ease-in-out infinite;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(0,151,178,0.15) 0%, transparent 70%);
+  top: -150px; right: -50px;
+  animation: blobFloat 10s ease-in-out infinite;
 }
 .hero-blob-2 {
-  width: 350px; height: 350px;
-  background: radial-gradient(circle, rgba(0,151,178,0.06) 0%, transparent 70%);
-  bottom: 50px; left: -80px;
-  animation: blobFloat 11s ease-in-out infinite reverse;
+  width: 550px; height: 550px;
+  background: radial-gradient(circle, rgba(235, 120, 80, 0.08) 0%, transparent 70%);
+  bottom: -50px; left: -50px;
+  animation: blobFloat 14s ease-in-out infinite reverse;
+}
+
+.hero-watermark {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-disp);
+  font-size: 15vw;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(0, 151, 178, 0.022);
+  pointer-events: none;
+  z-index: 1;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.tech-coord {
+  position: absolute;
+  bottom: 25px;
+  left: 5vw;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: rgba(0, 151, 178, 0.35);
+  letter-spacing: 0.15em;
+  z-index: 2;
+  pointer-events: none;
 }
 @keyframes blobFloat {
   0%, 100% { transform: translate(0, 0) scale(1); }
@@ -382,28 +411,251 @@ body::before {
   position: relative;
   z-index: 2;
 }
-.tshirt-stage {
+.collage-stage {
   position: relative;
-  width: 420px;
-  height: 480px;
+  width: 640px;
+  height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
+  perspective: 1000px;
+  transform: translateX(-140px);
+  z-index: 2;
 }
-.tshirt-stage .orbit-ring {
-  inset: -30px;
+
+.collage-grid-bg {
+  position: absolute;
+  inset: -100px;
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 151, 178, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 151, 178, 0.04) 1px, transparent 1px);
+  opacity: 0.85;
+  mask-image: radial-gradient(circle, black, transparent 75%);
+  -webkit-mask-image: radial-gradient(circle, black, transparent 75%);
+  pointer-events: none;
+  z-index: 1;
 }
-.tshirt-stage .glow-ring {
-  width: 340px;
-  height: 340px;
+
+.collage-card {
+  position: absolute;
+  width: 320px;
+  height: 380px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 8px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.3, 1);
+  transform-style: preserve-3d;
+  will-change: transform, box-shadow, z-index;
 }
-.tshirt-stage .tshirt-aura {
-  width: 280px;
-  height: 280px;
+
+.collage-card-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
-.tshirt-stage .tshirt-wrapper {
-  width: 280px;
-  height: 280px;
+
+.collage-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 12px;
+  transition: transform 0.6s ease;
+  z-index: 1;
+}
+
+.collage-badge {
+  position: absolute;
+  top: -10px;
+  left: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-family: var(--font-disp);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  z-index: 15;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: all 0.4s ease;
+}
+
+.collage-badge.accent {
+  background: rgba(0, 151, 178, 0.18);
+  border-color: rgba(0, 151, 178, 0.35);
+  color: var(--cyan);
+  box-shadow: 0 0 10px rgba(0, 151, 178, 0.2);
+}
+
+/* Layering, Rotation & Placements (5-Card Fan Collage Layout - Shifted Inward for Balance) */
+.card-hoodies {
+  transform: translate3d(-165px, -90px, -150px) rotate(-18deg);
+  z-index: 3;
+}
+
+.card-tees-black {
+  transform: translate3d(-145px, 110px, -100px) rotate(-8deg);
+  z-index: 4;
+}
+
+.card-polos {
+  transform: translate3d(155px, -80px, -90px) rotate(12deg);
+  z-index: 5;
+}
+
+.card-polos-yellow {
+  transform: translate3d(145px, 100px, -70px) rotate(-6deg);
+  z-index: 6;
+}
+
+.card-tees {
+  transform: translate3d(0, 0, 0) rotate(-2deg);
+  z-index: 10;
+  width: 360px;
+  height: 420px;
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+}
+
+/* 3D Interactive Hover States */
+.collage-card:hover {
+  transform: translate3d(0, -25px, 60px) rotate(0deg) !important;
+  z-index: 30 !important;
+  border-color: var(--cyan);
+  box-shadow: 0 30px 65px rgba(0, 151, 178, 0.35);
+}
+
+.collage-card:hover .collage-badge {
+  background: var(--cyan);
+  color: #000;
+  border-color: var(--cyan);
+  box-shadow: 0 0 15px var(--cyan);
+}
+
+.collage-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Holographic Laser Printing scanner elements */
+.tee-scanner-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.tee-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 16px;
+  pointer-events: none;
+}
+
+.tee-holo {
+  filter: grayscale(1) brightness(0.35) sepia(1) saturate(7) hue-rotate(145deg);
+  opacity: 0.85;
+}
+
+.tee-print-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  animation: printReveal 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: clip-path;
+}
+
+.tee-printed {
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.15));
+}
+
+.laser-beam {
+  position: absolute;
+  top: 0;
+  left: -10%;
+  width: 120%;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    var(--cyan) 15%, 
+    #fff 50%, 
+    var(--cyan) 85%, 
+    transparent
+  );
+  z-index: 5;
+  animation: laserSweep 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: transform;
+}
+
+.laser-glow {
+  position: absolute;
+  top: -8px;
+  left: 0;
+  right: 0;
+  height: 18px;
+  background: rgba(0, 151, 178, 0.25);
+  filter: blur(6px);
+}
+
+/* Decorative Tech Rings in Background */
+.tech-ring {
+  position: absolute;
+  border: 1px dashed rgba(0, 151, 178, 0.08);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.tech-ring.tr1 {
+  width: 500px;
+  height: 500px;
+  animation: ringRotateClockwise 40s linear infinite;
+}
+
+.tech-ring.tr2 {
+  width: 400px;
+  height: 400px;
+  border-style: dotted;
+  border-color: rgba(0, 151, 178, 0.06);
+  animation: ringRotateCounterClockwise 30s linear infinite;
+}
+
+/* New Animations */
+@keyframes laserSweep {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(402px); } /* Sweeps exact height of the new larger tee inner container */
+  100% { transform: translateY(0); }
+}
+
+@keyframes printReveal {
+  0% { clip-path: inset(0 0 100% 0); }
+  50% { clip-path: inset(0 0 0% 0); }
+  100% { clip-path: inset(0 0 100% 0); }
+}
+
+@keyframes ringRotateClockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes ringRotateCounterClockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
 }
 
 /* ── TICKER ── */
@@ -712,6 +964,14 @@ body::before {
 .add-to-cart-cta {
   width: 100%;
   margin-top: 1rem;
+}
+
+.price-disclaimer {
+  font-size: 0.72rem;
+  color: var(--muted);
+  line-height: 1.4;
+  margin-top: 0.8rem;
+  opacity: 0.8;
 }
 
 /* ── PRODUCTS SECTION ── */

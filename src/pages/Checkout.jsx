@@ -82,7 +82,7 @@ export default function Checkout() {
       });
 
       // Prepare WhatsApp text
-      const waText = `Hi Triweave Print Xpress! 👋\nI just placed an order on your website.\n\n*Order ID:* ${orderId}\n*Name:* ${form.name}\n*Phone:* ${form.phone}\n*Email:* ${form.email}\n\n*Order Details:*\n${itemsDetailsText}\n\n*Total Amount:* ₹${getCartTotal()}\n\n*Shipping Address:*\n${fullAddress}\n\nplease share your UPI details to confirm the payment!`;
+      const waText = `Hi Triweave Print Xpress! 👋\nI just placed an order on your website.\n\n*Order ID:* ${orderId}\n*Name:* ${form.name}\n*Phone:* ${form.phone}\n*Email:* ${form.email}\n\n*Order Details:*\n${itemsDetailsText}\n\n*Estimated Total Amount:* ₹${getCartTotal()}* (Base Price - Subject to design review)\n\n*Shipping Address:*\n${fullAddress}\n\nplease review my order and share the final UPI details. I will also attach my high-resolution logo/design file in this chat! 👋`;
       
       const waUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(waText)}`;
       setWaRedirectUrl(waUrl);
@@ -111,7 +111,7 @@ export default function Checkout() {
         <h2>Order Received!</h2>
         <p className="success-order-id">Your Order ID is <strong>{generatedOrderId}</strong></p>
         <p className="success-desc">
-          Your order has been recorded in our system. You are being redirected to WhatsApp to complete your payment via UPI QR.
+          Your order has been recorded in our system. You are being redirected to WhatsApp to verify payment. <strong>Please remember to attach your high-resolution logo/graphics file in the WhatsApp chat!</strong>
         </p>
         <p className="success-note">
           If the WhatsApp window did not open, click the button below to initiate the chat manually.
@@ -122,7 +122,7 @@ export default function Checkout() {
             if (waRedirectUrl) {
               window.open(waRedirectUrl, "_blank");
             } else {
-              const waText = `Hi Triweave! I've placed order #${generatedOrderId}. Please send UPI details.`;
+              const waText = `Hi Triweave! I've placed order #${generatedOrderId}. Please review and send final UPI details. I will send my high-res logo file here too!`;
               window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(waText)}`, "_blank");
             }
           }}
