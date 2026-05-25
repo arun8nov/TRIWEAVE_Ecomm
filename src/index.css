@@ -1407,6 +1407,43 @@ section {
   text-decoration: underline;
 }
 
+/* Contact Social Media Buttons */
+.contact-social-row {
+  display: flex;
+  gap: 0.85rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+.contact-social-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+.contact-social-btn:hover {
+  transform: translateY(-2px);
+  background: var(--surface);
+  border-color: var(--cyan);
+  color: var(--cyan);
+  box-shadow: 0 8px 20px var(--cyan-glow);
+}
+.contact-social-btn svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
 /* Contact Form */
 .contact-form {
   display: flex;

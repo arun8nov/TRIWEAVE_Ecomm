@@ -512,6 +512,54 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
+            <div className="contact-social-row">
+              <a 
+                href="https://wa.me/916374338510" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="contact-social-btn"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="none">
+                  <circle cx="12" cy="12" r="11" fill="#25D366" />
+                  <path d="M12 6a6 6 0 0 0-5.18 9.02l-.76 2.77 2.83-.74A6 6 0 1 0 12 6zm3.11 8.53c-.13.37-.66.71-1.07.8-.28.06-.65.1-1.87-.41a6.4 6.4 0 0 1-2.84-2.5 4.3 4.3 0 0 1-.92-2.29c0-.98.51-1.46.69-1.66.19-.2.37-.25.5-.25h.33c.11 0 .26.01.38.3.15.37.52 1.27.57 1.37.05.1.08.22.01.36-.07.14-.15.23-.25.35-.1.12-.21.27-.09.48.24.41.95 1.5 2.03 2.42.36.3.67.42.92.52.26.1.5.08.69-.13.19-.21.83-.97.96-1.21.13-.24.26-.2.44-.13.18.07 1.13.53 1.33.63.2.1.33.15.38.24.05.09.05.52-.08.89z" fill="white" />
+                </svg>
+                WhatsApp
+              </a>
+              <a 
+                href="https://www.instagram.com/triweave_" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="contact-social-btn"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="none">
+                  <defs>
+                    <linearGradient id="instaGradContact" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#fbad50" />
+                      <stop offset="50%" stop-color="#e95950" />
+                      <stop offset="100%" stop-color="#bc2a8d" />
+                    </linearGradient>
+                  </defs>
+                  <circle cx="12" cy="12" r="11" fill="url(#instaGradContact)" />
+                  <rect x="7.5" y="7.5" width="9" height="9" rx="2.5" stroke="white" stroke-width="1.5" fill="none" />
+                  <circle cx="12" cy="12" r="2.2" stroke="white" stroke-width="1.5" fill="none" />
+                  <circle cx="14.5" cy="9.5" r="0.6" fill="white" />
+                </svg>
+                Instagram
+              </a>
+              <a 
+                href="https://www.linkedin.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="contact-social-btn"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="none">
+                  <circle cx="12" cy="12" r="11" fill="#0077B5" />
+                  <path d="M9.13 16V9.97H7.11V16H9.13zm-1.01-6.85c.7 0 1.1-.47 1.1-1.05-.01-.6-.4-1.05-1.09-1.05-.68 0-1.1.45-1.1 1.05 0 .58.4 1.05 1.07 1.05h.02zm7.62 6.85v-3.46c0-1.85-.99-2.71-2.3-2.71-1.06 0-1.53.58-1.8 1v-1.01H9.6c.03.57 0 6.03 0 6.03h2.02v-3.37c0-.18.01-.36.06-.49.14-.36.47-.73 1.02-.73.72 0 1.01.55 1.01 1.35V16h2.03z" fill="white" />
+                </svg>
+                LinkedIn
+              </a>
+            </div>
           </div>
 
           {/* Lead Submission Form */}
